@@ -1,0 +1,19 @@
+/* Main Entry CSS File */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+@import 'aos/dist/aos.css';
+
+/* Import Custom Modules */
+@import './variables.css';
+@import './navbar.css';
+@import './hero.css';
+@import './services.css';
+@import './contact.css';
+@import './footer.css';
+
+/* Utilities */
+.text-gradient-sky {
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

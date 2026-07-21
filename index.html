@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIR - Soluciones Industriales Regalado | Automatización & Control Industrial</title>
+  <meta name="description" content="Líderes en automatización industrial, control de procesos, ingeniería y soluciones técnicas avanzadas en Ramos Arizpe, Coahuila.">
+  
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <script type="module" src="/src/styles/main.css"></script>
+</head>
+<body>
+
+  <!-- STICKY GLASSMORPHISM NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-sir" id="mainNavbar">
+    <div class="container">
+      <a class="brand-logo" href="#hero">
+        <!-- Brand Logo SVG Placeholder -->
+        <svg class="logo-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="45" fill="url(#logoGrad)" stroke="#38bdf8" stroke-width="2"/>
+          <path d="M50 20 L65 30 L65 50 L50 60 L35 50 L35 30 Z" fill="#ffffff" opacity="0.9"/>
+          <circle cx="50" cy="40" r="10" fill="#0066ff"/>
+          <path d="M30 65 Q50 85 70 65" stroke="#ef4444" stroke-width="6" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="100" y2="100">
+              <stop offset="0%" stop-color="#0f172a"/>
+              <stop offset="100%" stop-color="#1e3a8a"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="logo-text-group">
+          <span class="brand-title">SIR</span>
+          <span class="brand-subtitle-mini">Soluciones Industriales</span>
+        </div>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sirNavbarContent" aria-controls="sirNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="sirNavbarContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#hero">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#servicios">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacto">Contacto</a>
+          </li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-3 lang-switcher-wrapper">
+          <!-- Language Selector Pills (Visual Toggle) -->
+          <div class="lang-switcher" aria-label="Language Selector">
+            <button class="lang-btn active" id="langEs">Español</button>
+            <button class="lang-btn" id="langEn">English</button>
+          </div>
+
+          <!-- Cotizar Proyecto CTA Button -->
+          <a href="#contacto" class="btn btn-cotizar">
+            <i class="fas fa-paper-plane me-1"></i> Cotizar proyecto
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION (100vh) -->
+  <section class="hero-section" id="hero">
+    <!-- Video Background Container -->
+    <div class="hero-video-wrapper">
+      <video class="hero-video" autoplay loop muted playsinline poster="">
+        <source src="assets/video/hero.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+      </video>
+      <div class="hero-fallback-bg"></div>
+    </div>
+
+    <!-- Dark Parallax Overlay & Grid Pattern -->
+    <div class="hero-overlay"></div>
+    <div class="hero-grid-pattern"></div>
+
+    <div class="container hero-content">
+      <div class="row align-items-center">
+        <div class="col-lg-8 col-md-10">
+          <h1 class="hero-title" id="hero-title">SIR</h1>
+          <h2 class="hero-subtitle" id="hero-subtitle">Soluciones Industriales Regalado</h2>
+          <p class="hero-description" id="hero-desc">
+            Transformamos la industria manufacturera mediante integración robótica, automatización de procesos, tableros de control y mantenimiento especializado con los más altos estándares de calidad.
+          </p>
+          <div id="hero-btn">
+            <a href="#servicios" class="btn btn-hero-info">
+              Más información <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Down Indicator -->
+    <div class="hero-scroll-indicator">
+      <span>Descubrir</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- SERVICIOS SECTION (3 CARDS) -->
+  <section class="services-section" id="servicios">
+    <!-- Modern Fluid Wavy Vector Background matching prototype curves -->
+    <div class="services-bg-waves">
+      <svg viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-100 0 C 300 150, 700 -50, 1540 100 L 1540 900 L -100 900 Z" fill="url(#waveGrad1)" opacity="0.6"/>
+        <path d="M-100 200 C 400 400, 900 100, 1540 300 L 1540 900 L -100 900 Z" fill="url(#waveGrad2)" opacity="0.5"/>
+        <path d="M-100 450 C 350 650, 850 350, 1540 550 L 1540 900 L -100 900 Z" fill="#172554" opacity="0.7"/>
+        <defs>
+          <linearGradient id="waveGrad1" x1="0" y1="0" x2="1440" y2="900">
+            <stop offset="0%" stop-color="#2563eb"/>
+            <stop offset="100%" stop-color="#1d4ed8"/>
+          </linearGradient>
+          <linearGradient id="waveGrad2" x1="0" y1="0" x2="1440" y2="900">
+            <stop offset="0%" stop-color="#3b82f6"/>
+            <stop offset="100%" stop-color="#1e40af"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <div class="container services-container">
+      <div class="section-header-center" data-aos="fade-down">
+        <h2 class="section-title-lg">SERVICIOS</h2>
+        <p class="section-subtitle-text">Innovación técnica y ejecución precisa adaptada a los requerimientos de tu planta industrial.</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <!-- Service Card 1 -->
+        <div class="col-lg-4 col-md-6 service-card-wrapper" data-aos="fade-right" data-aos-delay="100">
+          <div class="service-card">
+            <!-- Image Placeholder -->
+            <div class="service-img-placeholder" aria-label="Placeholder de Imagen de Servicio 1">
+              <!-- SVG Illustration Placeholder -->
+              <svg class="service-img-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <h3 class="service-card-title">Servicio 1: Automatización Industrial</h3>
+            <p class="service-card-desc">
+              Diseño, programación e integración de PLC, HMI y celdas robotizadas para optimizar líneas de producción continuo y manufactura avanzada.
+            </p>
+            <button class="btn btn-card-action">
+              Saber más <i class="fas fa-chevron-right me-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="col-lg-4 col-md-6 service-card-wrapper" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-card">
+            <!-- Image Placeholder -->
+            <div class="service-img-placeholder" aria-label="Placeholder de Imagen de Servicio 2">
+              <!-- SVG Illustration Placeholder -->
+              <svg class="service-img-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                <circle cx="12" cy="12" r="4"/>
+              </svg>
+            </div>
+            <h3 class="service-card-title">Servicio 2: Tableros de Control & Potencia</h3>
+            <p class="service-card-desc">
+              Ensamble de gabinetes de control eléctrico, distribución de energía y sistemas SCADA bajo normativas internacionales de seguridad industrial.
+            </p>
+            <button class="btn btn-card-action">
+              Saber más <i class="fas fa-chevron-right me-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="col-lg-4 col-md-6 service-card-wrapper" data-aos="fade-left" data-aos-delay="300">
+          <div class="service-card">
+            <!-- Image Placeholder -->
+            <div class="service-img-placeholder" aria-label="Placeholder de Imagen de Servicio 3">
+              <!-- SVG Illustration Placeholder -->
+              <svg class="service-img-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
+            <h3 class="service-card-title">Servicio 3: Mantenimiento & Diagnóstico</h3>
+            <p class="service-card-desc">
+              Mantenimiento preventivo y correctivo, resolución de fallas críticas en sitio y modernización (retrofit) de maquinaria electromecánica.
+            </p>
+            <button class="btn btn-card-action">
+              Saber más <i class="fas fa-chevron-right me-1"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO SECTION -->
+  <section class="contact-section" id="contacto">
+    <div class="container">
+      <div class="section-header-center" data-aos="fade-up">
+        <h2 class="section-title-lg">CONTACTANOS</h2>
+        <p class="section-subtitle-text">Ponte en contacto con nuestro equipo técnico para cotizaciones y asesoría en tus proyectos.</p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <!-- Column 1: Contact Info Card -->
+        <div class="col-lg-5" data-aos="fade-right" data-aos-delay="100">
+          <div class="contact-info-card">
+            <div>
+              <div class="info-list">
+                <div class="info-item">
+                  <div class="info-icon-box">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div>
+                    <div class="info-label">Ubicación</div>
+                    <p class="info-value">Ramos Arizpe, Coahuila, México.</p>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon-box">
+                    <i class="fas fa-clock"></i>
+                  </div>
+                  <div>
+                    <div class="info-label">Horario de atención</div>
+                    <p class="info-value">Lunes a viernes<br>9:00 a. m. – 6:00 p. m.</p>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon-box">
+                    <i class="fas fa-phone-alt"></i>
+                  </div>
+                  <div>
+                    <div class="info-label">Teléfono</div>
+                    <p class="info-value">+52 844 XXX XXXX</p>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon-box">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div>
+                    <div class="info-label">Correo electrónico</div>
+                    <p class="info-value">contacto@empresa.com</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Illustration Placeholder -->
+              <div class="illustration-placeholder" aria-label="Placeholder para Ilustración de Contacto">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M21 16.5A2.5 2.5 0 0 1 18.5 19H5.5A2.5 2.5 0 0 1 3 16.5V7.5A2.5 2.5 0 0 1 5.5 5h13A2.5 2.5 0 0 1 21 7.5v9z"/>
+                  <polyline points="3,7 12,13 21,7"/>
+                </svg>
+              </div>
+            </div>
+
+            <h3 class="contact-headline">Tu proyecto comienza aquí.</h3>
+          </div>
+        </div>
+
+        <!-- Column 2: Modern Form -->
+        <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
+          <div class="contact-form-wrapper">
+            
+            <!-- Success Alert -->
+            <div class="form-alert-success" id="formSuccessAlert" role="alert">
+              <i class="fas fa-check-circle fs-4 me-2"></i>
+              <div>
+                <strong>¡Mensaje enviado con éxito!</strong> Nos comunicaremos contigo a la brevedad.
+              </div>
+            </div>
+
+            <form id="sirContactForm" novalidate>
+              <div class="form-group-custom">
+                <label for="inputEmail" class="form-label-custom">Email</label>
+                <input type="email" class="form-control-custom" id="inputEmail" placeholder="ejemplo@empresa.com" required>
+                <div class="invalid-feedback-custom">Por favor ingresa un correo electrónico válido.</div>
+              </div>
+
+              <div class="form-group-custom">
+                <label for="inputPhone" class="form-label-custom">Teléfono</label>
+                <input type="tel" class="form-control-custom" id="inputPhone" placeholder="+52 844 123 4567" required>
+                <div class="invalid-feedback-custom">Ingresa un número telefónico válido (mínimo 8 dígitos).</div>
+              </div>
+
+              <div class="form-group-custom">
+                <label for="inputMessage" class="form-label-custom">Mensaje</label>
+                <textarea class="form-control-custom" id="inputMessage" rows="5" placeholder="Describe los requerimientos de tu proyecto..." required></textarea>
+                <div class="invalid-feedback-custom">El mensaje debe contener al menos 10 caracteres.</div>
+              </div>
+
+              <button type="submit" class="btn btn-form-submit" id="btnSubmitForm">
+                <i class="fas fa-paper-plane me-1"></i> SUBMIT
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-sir">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Col 1: Logo & Info -->
+        <div class="col-lg-4 col-md-6">
+          <a class="brand-logo" href="#hero">
+            <svg class="logo-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="45" fill="url(#logoGradFooter)" stroke="#38bdf8" stroke-width="2"/>
+              <path d="M50 20 L65 30 L65 50 L50 60 L35 50 L35 30 Z" fill="#ffffff" opacity="0.9"/>
+              <circle cx="50" cy="40" r="10" fill="#0066ff"/>
+              <path d="M30 65 Q50 85 70 65" stroke="#ef4444" stroke-width="6" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="logoGradFooter" x1="0" y1="0" x2="100" y2="100">
+                  <stop offset="0%" stop-color="#0f172a"/>
+                  <stop offset="100%" stop-color="#1e3a8a"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="logo-text-group">
+              <span class="brand-title">SIR</span>
+              <span class="brand-subtitle-mini">Soluciones Industriales</span>
+            </div>
+          </a>
+          <p class="footer-brand-text">
+            Soluciones integrales de ingeniería y automatización industrial orientadas a maximizar la eficiencia y confiabilidad en plantas de manufactura.
+          </p>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="col-lg-4 col-md-6">
+          <h4 class="footer-heading">Navegación</h4>
+          <ul class="footer-links">
+            <li><a href="#hero"><i class="fas fa-chevron-right text-primary me-1"></i> Inicio</a></li>
+            <li><a href="#servicios"><i class="fas fa-chevron-right text-primary me-1"></i> Servicios</a></li>
+            <li><a href="#contacto"><i class="fas fa-chevron-right text-primary me-1"></i> Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact Summary -->
+        <div class="col-lg-4 col-md-12">
+          <h4 class="footer-heading">Contacto</h4>
+          <div class="footer-contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Ramos Arizpe, Coahuila</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <span>+52 844 XXX XXXX</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>contacto@empresa.com</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Media Icon Buttons -->
+      <div class="footer-social-group">
+        <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="social-circle-btn wa" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="mailto:contacto@empresa.com" class="social-circle-btn" aria-label="Correo Electrónico">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" class="social-circle-btn fb" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-circle-btn li" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+
+      <!-- Copyright Notice -->
+      <div class="footer-bottom-divider">
+        <p class="mb-0">
+          © 2026 SIR. Todos los derechos reservados | Sitio web desarrollado por <strong>Webdis</strong>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

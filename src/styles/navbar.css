@@ -15,7 +15,7 @@
 
 .navbar-sir.scrolled {
   padding: 0.65rem 0;
-  background: rgba(5, 0, 82, 0.26);
+  background: rgba(2, 2, 6, 0.595);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -225,5 +225,61 @@
   
   .lang-switcher-wrapper {
     margin-top: 1rem;
+  }
+}
+
+.navbar-sir.contact-mode {
+  padding: 1.25rem 0;
+  background: #01000b30; /* Solid black semi-transparente */
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px); /* Safari lo necesita */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+.navbar-sir.contact-mode .logo-img {
+  height: 80px; /* Initial large logo size */
+  margin-top: -15px;
+  margin-bottom: -15px;
+}
+
+.navbar-sir.contact-mode .nav-link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar-sir.contact-mode .nav-link:hover,
+.navbar-sir.contact-mode .nav-link.active {
+  color: #ffffff;
+}
+
+.navbar-sir.contact-mode .nav-link::after {
+  background: var(--color-sky-blue);
+}
+
+.navbar-sir.contact-mode .lang-switcher {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar-sir.contact-mode .lang-btn {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar-sir.contact-mode .lang-btn.active,
+.navbar-sir.contact-mode .lang-btn:hover {
+  color: #ffffff;
+}
+
+.navbar-sir.contact-mode .navbar-toggler {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 991px) {
+  .navbar-sir.contact-mode .navbar-collapse {
+    background: rgba(0, 0, 0, 0.98);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  .navbar-sir.contact-mode .navbar-collapse .nav-link {
+    color: rgba(255, 255, 255, 0.85);
   }
 }

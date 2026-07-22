@@ -11,11 +11,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Sticky Navbar Scroll Effect
   const navbar = document.querySelector('.navbar-sir');
+  const contactSection = document.getElementById('contacto');
+
   const handleScroll = () => {
-    if (window.scrollY > 40) {
+    const scrollY = window.scrollY;
+    let inContactSection = false;
+
+    if (contactSection) {
+      const contactTop = contactSection.offsetTop;
+      // Triggers contact-mode when scroll reaches the top of the Contact section (minus navbar offset)
+      if (scrollY >= (contactTop - 80)) {
+        inContactSection = true;
+      }
+    }
+
+    if (inContactSection) {
+      navbar.classList.remove('scrolled');
+      navbar.classList.add('contact-mode');
+    } else if (scrollY > 40) {
       navbar.classList.add('scrolled');
+      navbar.classList.remove('contact-mode');
     } else {
       navbar.classList.remove('scrolled');
+      navbar.classList.remove('contact-mode');
     }
   };
   window.addEventListener('scroll', handleScroll);

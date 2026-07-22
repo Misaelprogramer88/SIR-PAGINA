@@ -175,3 +175,89 @@
 .service-card:hover .btn-card-action i {
   transform: translateX(4px);
 }
+
+
+/* Marquee for brands in service pages */
+.brands-section {
+  padding: 60px 0;
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.brands-title {
+  font-size: 1.5rem;
+  color: #0f172a;
+  margin-bottom: 3rem;
+  font-weight: 600;
+}
+
+.brands-marquee-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+/* Fading edges for better visual effect */
+.brands-marquee-wrapper::before,
+.brands-marquee-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+.brands-marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+.brands-marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff, transparent);
+}
+
+.brands-marquee {
+  display: flex;
+  animation: marquee 20s linear infinite;
+  align-items: center;
+  width: fit-content;
+}
+
+.brands-marquee:hover {
+  animation-play-state: paused;
+}
+
+.brands-marquee-content {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  padding: 0 40px;
+}
+
+.brand-placeholder {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: color 0.3s ease;
+  cursor: default;
+}
+
+.brand-placeholder:hover {
+  color: #3b82f6;
+}
+
+.brand-placeholder i {
+  font-size: 2.2rem;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

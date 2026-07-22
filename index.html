@@ -19,23 +19,7 @@
   <nav class="navbar navbar-expand-lg navbar-sir" id="mainNavbar">
     <div class="container">
       <a class="brand-logo" href="#hero">
-        <!-- Brand Logo SVG Placeholder -->
-        <svg class="logo-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="45" fill="url(#logoGrad)" stroke="#38bdf8" stroke-width="2"/>
-          <path d="M50 20 L65 30 L65 50 L50 60 L35 50 L35 30 Z" fill="#ffffff" opacity="0.9"/>
-          <circle cx="50" cy="40" r="10" fill="#0066ff"/>
-          <path d="M30 65 Q50 85 70 65" stroke="#ef4444" stroke-width="6" stroke-linecap="round"/>
-          <defs>
-            <linearGradient id="logoGrad" x1="0" y1="0" x2="100" y2="100">
-              <stop offset="0%" stop-color="#0f172a"/>
-              <stop offset="100%" stop-color="#1e3a8a"/>
-            </linearGradient>
-          </defs>
-        </svg>
-        <div class="logo-text-group">
-          <span class="brand-title">SIR</span>
-          <span class="brand-subtitle-mini">Soluciones Industriales s</span>
-        </div>
+        <img src="assets/Images/SIRLOGO.png" alt="SIR Logo" class="logo-img">
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sirNavbarContent" aria-controls="sirNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,7 +60,7 @@
     <!-- Video Background Container -->
     <div class="hero-video-wrapper">
       <video class="hero-video" autoplay loop muted playsinline poster="">
-        <source src="assets/video/hero.mp4" type="video/mp4">
+        <source src="assets/video/videofondosir.mp4" type="video/mp4">
         Tu navegador no soporta el elemento de video.
       </video>
       <div class="hero-fallback-bg"></div>
@@ -116,20 +100,18 @@
   <section class="services-section" id="servicios">
     <!-- Modern Fluid Wavy Vector Background matching prototype curves -->
     <div class="services-bg-waves">
-      <svg viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M-100 0 C 300 150, 700 -50, 1540 100 L 1540 900 L -100 900 Z" fill="url(#waveGrad1)" opacity="0.6"/>
-        <path d="M-100 200 C 400 400, 900 100, 1540 300 L 1540 900 L -100 900 Z" fill="url(#waveGrad2)" opacity="0.5"/>
-        <path d="M-100 450 C 350 650, 850 350, 1540 550 L 1540 900 L -100 900 Z" fill="#172554" opacity="0.7"/>
-        <defs>
-          <linearGradient id="waveGrad1" x1="0" y1="0" x2="1440" y2="900">
-            <stop offset="0%" stop-color="#2563eb"/>
-            <stop offset="100%" stop-color="#1d4ed8"/>
-          </linearGradient>
-          <linearGradient id="waveGrad2" x1="0" y1="0" x2="1440" y2="900">
-            <stop offset="0%" stop-color="#3b82f6"/>
-            <stop offset="100%" stop-color="#1e40af"/>
-          </linearGradient>
-        </defs>
+      <svg viewBox="0 0 1440 900" preserveAspectRatio="xMaxYMax slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Dark Navy Blue Base -->
+        <rect width="100%" height="100%" fill="#1e3555"/>
+        
+        <!-- Medium Blue Curved Shape -->
+        <path d="M1440,-50 C1250,150 1150,300 1080,450 C950,700 700,850 300,950 L1440,950 Z" fill="#467cbf"/>
+        
+        <!-- Bright Blue Curved Shape -->
+        <path d="M1440,250 C1150,450 950,650 900,950 L1440,950 Z" fill="#2583f7"/>
+        
+        <!-- Light Blue Curved Shape -->
+        <path d="M1440,550 C1300,700 1200,850 1150,950 L1440,950 Z" fill="#69a8fa"/>
       </svg>
     </div>
 
@@ -153,14 +135,13 @@
                 <circle cx="12" cy="10" r="3"></circle>
               </svg>
             </div>
-            <h3 class="service-card-title">Desarrollo e implementación de EOTL
-</h3>
+            <h3 class="service-card-title">Servicio 1: Automatización Industrial</h3>
             <p class="service-card-desc">
               Sistemas personalizados de prueba de fin de línea (EOTL) que garantizan pruebas funcionales, validación y trazabilidad, mejorando la calidad, confiabilidad y eficiencia de los procesos de producción.
             </p>
-            <button class="btn btn-card-action">
+            <a href="eotl.html" class="btn btn-card-action">
               Saber más <i class="fas fa-chevron-right me-1"></i>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -175,14 +156,13 @@
                 <circle cx="12" cy="12" r="4"/>
               </svg>
             </div>
-            <h3 class="service-card-title">Servicios de programación: PLC, HMI, robots y sistemas de visión
-</h3>
+            <h3 class="service-card-title">Servicio 2: Tableros de Control & Potencia</h3>
             <p class="service-card-desc">
               Soluciones de programación para automatización industrial, incluyendo PLC, HMI, robots industriales, visión artificial y sistemas de control, optimizando el rendimiento y la productividad de cada proceso.
             </p>
-            <button class="btn btn-card-action">
+            <a href="program-services.html" class="btn btn-card-action">
               Saber más <i class="fas fa-chevron-right me-1"></i>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -196,14 +176,13 @@
                 <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
               </svg>
             </div>
-            <h3 class="service-card-title">Diseño y fabricación de componentes mecánicos
-</h3>
+            <h3 class="service-card-title">Servicio 3: Mantenimiento & Diagnóstico</h3>
             <p class="service-card-desc">
               Soluciones de diseño mecánico y fabricación de componentes de precisión, desde el desarrollo del concepto hasta el ensamble, garantizando calidad, confiabilidad y alto desempeño en cada proyecto.
             </p>
-            <button class="btn btn-card-action">
+            <a href="mechanical-components.html" class="btn btn-card-action">
               Saber más <i class="fas fa-chevron-right me-1"></i>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -327,22 +306,7 @@
         <!-- Col 1: Logo & Info -->
         <div class="col-lg-4 col-md-6">
           <a class="brand-logo" href="#hero">
-            <svg class="logo-icon-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="50" r="45" fill="url(#logoGradFooter)" stroke="#38bdf8" stroke-width="2"/>
-              <path d="M50 20 L65 30 L65 50 L50 60 L35 50 L35 30 Z" fill="#ffffff" opacity="0.9"/>
-              <circle cx="50" cy="40" r="10" fill="#0066ff"/>
-              <path d="M30 65 Q50 85 70 65" stroke="#ef4444" stroke-width="6" stroke-linecap="round"/>
-              <defs>
-                <linearGradient id="logoGradFooter" x1="0" y1="0" x2="100" y2="100">
-                  <stop offset="0%" stop-color="#0f172a"/>
-                  <stop offset="100%" stop-color="#1e3a8a"/>
-                </linearGradient>
-              </defs>
-            </svg>
-            <div class="logo-text-group">
-              <span class="brand-title">SIR</span>
-              <span class="brand-subtitle-mini">Soluciones Industriales</span>
-            </div>
+            <img src="assets/Images/SIRLOGO.png" alt="SIR Logo" class="logo-img">
           </a>
           <p class="footer-brand-text">
             Soluciones integrales de ingeniería y automatización industrial orientadas a maximizar la eficiencia y confiabilidad en plantas de manufactura.

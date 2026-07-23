@@ -200,3 +200,81 @@
   align-items: center;
   gap: 0.75rem;
 }
+
+/* Cobertura Nacional Abajo del Formulario (Sin Tarjeta) */
+.cobertura-card-title {
+  font-family: var(--font-heading, 'Outfit', sans-serif);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  letter-spacing: -0.5px;
+}
+
+.cobertura-card-title i {
+  color: #2563eb;
+}
+
+.cobertura-desc-sub {
+  font-size: 1rem;
+  color: #475569;
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+.cobertura-map-large-wrapper {
+  max-width: 850px;
+  margin: 0 auto 2rem auto;
+  padding: 1.5rem;
+  background: transparent;
+}
+
+.cobertura-map-large-img {
+  width: 100%;
+  max-height: 480px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.cobertura-states-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+}
+
+.cobertura-state-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.35rem;
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1px solid #dbeafe;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+  transition: transform var(--transition-fast, 0.2s ease), background var(--transition-fast, 0.2s ease), color var(--transition-fast, 0.2s ease);
+}
+
+.cobertura-state-pill:hover {
+  transform: translateY(-2px);
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.cobertura-state-pill i {
+  color: #2563eb;
+  font-size: 0.9rem;
+}
+
+.cobertura-state-pill:hover i {
+  color: #ffffff;
+}

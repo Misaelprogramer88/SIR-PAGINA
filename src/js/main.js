@@ -217,11 +217,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (targetPage && targetPage !== currentPage) {
         link.addEventListener('click', (e) => {
-          e.preventDefault();
-          if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-            if (bsCollapse) bsCollapse.hide();
+          // On mobile, navigate immediately so collapse animations don't cancel touch events
+          if (window.innerWidth < 992) {
+            window.location.href = href;
+            return;
           }
+
+          e.preventDefault();
           document.body.classList.remove('page-loaded');
           document.body.classList.add('page-exiting');
           setTimeout(() => {

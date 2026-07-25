@@ -25,6 +25,30 @@
   object-fit: cover;
 }
 
+/* Service Details Extra Section - Matching Index Blue Gradient & Waves */
+.service-details-extra {
+  position: relative;
+  padding: 5rem 0;
+  background: linear-gradient(180deg, #1d4ed8 0%, #1e40af 40%, #172554 100%) !important;
+  color: #ffffff !important;
+  overflow: hidden;
+}
+
+.service-details-extra .container {
+  position: relative;
+  z-index: 2;
+}
+
+.service-details-extra h2.section-title-lg {
+  color: #ffffff !important;
+}
+
+.service-details-extra .section-subtitle-text,
+.service-details-extra ul,
+.service-details-extra li {
+  color: #e2e8f0 !important;
+}
+
 .services-container {
   position: relative;
   z-index: 2;

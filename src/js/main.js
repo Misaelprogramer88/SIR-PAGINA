@@ -84,6 +84,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  const serviceItems = document.querySelectorAll('.services-item');
+  serviceItems.forEach(item => {
+    item.addEventListener('click', () => {
+      if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+        if (bsCollapse) bsCollapse.hide();
+      }
+    });
+  });
+
   // ── Services hover dropdown ──────────────────────────────────────────
   // Teleport the menu to <body> ONLY on desktop (>= 992px) so NO parent overflow clips it,
   // while keeping it inside the collapse menu on mobile devices

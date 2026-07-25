@@ -344,6 +344,7 @@ html, body {
     position: static !important;
     opacity: 1 !important;
     visibility: visible !important;
+    pointer-events: auto !important;
     transform: none !important;
     box-shadow: none !important;
     border: none !important;
@@ -354,13 +355,20 @@ html, body {
     min-width: unset !important;
     border-left: 2px solid rgba(37, 99, 235, 0.3) !important;
     list-style: none !important;
+    z-index: 10 !important;
   }
 
   .services-dropdown .services-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.6rem !important;
     padding: 0.55rem 0.75rem !important;
     color: #334155 !important;
     font-size: 0.9rem !important;
     border-radius: var(--radius-sm);
+    pointer-events: auto !important;
+    position: relative !important;
+    z-index: 11 !important;
   }
 
   .services-dropdown .services-item:hover {

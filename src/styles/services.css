@@ -28,10 +28,22 @@
 /* Service Details Extra Section - Matching Index Blue Gradient & Waves */
 .service-details-extra {
   position: relative;
-  padding: 5rem 0;
+  padding: 5.5rem 0;
   background: linear-gradient(180deg, #1d4ed8 0%, #1e40af 40%, #172554 100%) !important;
   color: #ffffff !important;
   overflow: hidden;
+}
+
+.service-details-extra .services-bg-waves {
+  position: absolute;
+  top: -20%;
+  left: 0;
+  width: 100%;
+  height: 140%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.85;
+  will-change: transform;
 }
 
 .service-details-extra .container {

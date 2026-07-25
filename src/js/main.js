@@ -63,33 +63,31 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ── Smooth scroll for nav links & close mobile menu on click ──
-  const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .btn-hero-info');
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .btn-hero-info, .services-item, .btn-card-action');
   const navbarCollapse = document.getElementById('sirNavbarContent');
 
   navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
-      if (href && href.includes('#') && !href.startsWith('mailto:')) {
+      if (!href) return;
+
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      const isIndexPage = currentPage === '' || currentPage === 'index.html';
+
+      // Internal section links (e.g. index.html#servicios, index.html#contacto, #contacto)
+      if (href.includes('#') && !href.startsWith('mailto:') && !href.startsWith('https://wa.me')) {
         const hash = href.substring(href.indexOf('#'));
-        const targetSection = document.querySelector(hash);
-        if (targetSection) {
-          e.preventDefault();
-          targetSection.scrollIntoView({ behavior: 'smooth' });
-          if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-            if (bsCollapse) bsCollapse.hide();
+        if (isIndexPage) {
+          const targetSection = document.querySelector(hash);
+          if (targetSection) {
+            e.preventDefault();
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+            if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+              const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+              if (bsCollapse) bsCollapse.hide();
+            }
           }
         }
-      }
-    });
-  });
-
-  const serviceItems = document.querySelectorAll('.services-item');
-  serviceItems.forEach(item => {
-    item.addEventListener('click', () => {
-      if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-        if (bsCollapse) bsCollapse.hide();
       }
     });
   });
@@ -154,17 +152,23 @@ document.addEventListener('DOMContentLoaded', () => {
       !href.startsWith('javascript:') &&
       link.target !== '_blank'
     ) {
-      link.addEventListener('click', (e) => {
-        const currentPage = window.location.pathname.split('/').pop();
-        if (href !== currentPage) {
+      const targetPage = href.split('#')[0];
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+      if (targetPage && targetPage !== currentPage) {
+        link.addEventListener('click', (e) => {
           e.preventDefault();
+          if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+            if (bsCollapse) bsCollapse.hide();
+          }
           document.body.classList.remove('page-loaded');
           document.body.classList.add('page-exiting');
           setTimeout(() => {
             window.location.href = href;
-          }, 320);
-        }
-      });
+          }, 280);
+        });
+      }
     }
   });
 });

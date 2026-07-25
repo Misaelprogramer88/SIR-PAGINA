@@ -57,10 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const langEn = document.getElementById('langEn');
 
   if (langEs && langEn) {
-    let currentFile = window.location.pathname.split('/').pop();
-    if (!currentFile || currentFile === '' || currentFile === '/') currentFile = 'index.html';
+    let currentFile = window.location.pathname.split('/').pop() || 'index.html';
+    if (!currentFile || currentFile === '/') currentFile = 'index.html';
 
-    const isEnPage = currentFile.includes('-en.html');
+    const isEnPage = document.documentElement.lang === 'en' || 
+                     currentFile.includes('-en') || 
+                     window.location.href.includes('-en');
 
     if (isEnPage) {
       langEn.classList.add('active');
@@ -74,7 +76,16 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       e.stopPropagation();
       if (isEnPage) {
-        const spanishFile = currentFile.replace('-en.html', '.html');
+        let spanishFile = 'index.html';
+        if (currentFile.includes('-en.html')) {
+          spanishFile = currentFile.replace('-en.html', '.html');
+        } else if (currentFile.endsWith('-en')) {
+          spanishFile = currentFile.replace(/-en$/, '') + '.html';
+        } else if (currentFile === 'index-en') {
+          spanishFile = 'index.html';
+        } else {
+          spanishFile = 'index.html';
+        }
         window.location.href = spanishFile;
       }
     });
@@ -83,7 +94,14 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       e.stopPropagation();
       if (!isEnPage) {
-        const englishFile = (currentFile === 'index.html') ? 'index-en.html' : currentFile.replace('.html', '-en.html');
+        let englishFile = 'index-en.html';
+        if (currentFile.endsWith('.html') && !currentFile.includes('-en')) {
+          englishFile = (currentFile === 'index.html') ? 'index-en.html' : currentFile.replace('.html', '-en.html');
+        } else if (currentFile === 'index' || currentFile === 'index.html' || currentFile === '') {
+          englishFile = 'index-en.html';
+        } else if (!currentFile.includes('-en')) {
+          englishFile = currentFile + '-en.html';
+        }
         window.location.href = englishFile;
       }
     });

@@ -23,13 +23,15 @@
 
 .hero-video {
   position: absolute;
-  top: 0;
+  top: -15%;        /* extra space for parallax travel */
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 130%;     /* taller than viewport to allow vertical shift */
   object-fit: cover;
   z-index: 1;
   filter: brightness(0.8) contrast(1.05);
+  will-change: transform;
+  transform: translateY(0);
 }
 
 /* Dynamic Fallback Background when Video is placeholder */

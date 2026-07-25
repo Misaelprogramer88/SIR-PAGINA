@@ -257,3 +257,39 @@
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+/* Page Transition Animations for Service Pages
+   (Note: transform is applied to content elements, not body, to preserve position:fixed on navbar) */
+body.service-page {
+  opacity: 0;
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.service-page main,
+body.service-page section,
+body.service-page footer {
+  transform: translateY(16px);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.service-page.page-loaded {
+  opacity: 1;
+}
+
+body.service-page.page-loaded main,
+body.service-page.page-loaded section,
+body.service-page.page-loaded footer {
+  transform: translateY(0);
+}
+
+body.page-exiting {
+  opacity: 0 !important;
+  transition: opacity 0.35s cubic-bezier(0.7, 0, 0.84, 0) !important;
+}
+
+body.page-exiting main,
+body.page-exiting section,
+body.page-exiting footer {
+  transform: translateY(-16px) !important;
+  transition: transform 0.35s cubic-bezier(0.7, 0, 0.84, 0) !important;
+}

@@ -85,6 +85,121 @@
   width: 60%;
 }
 
+/* ── Services hover dropdown ─────────────────────── */
+.services-dropdown {
+  position: relative;
+}
+
+/* Arrow icon inside the toggle */
+.services-arrow {
+  font-size: 0.6rem;
+  margin-left: 4px;
+  vertical-align: middle;
+  transition: transform 0.25s ease;
+  opacity: 0.7;
+}
+.services-dropdown:hover .services-arrow {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+/* The floating menu – teleported to <body> by JS; top/left set via JS */
+.services-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  position: absolute;   /* absolute to document; coords set by JS */
+  min-width: 300px;
+  z-index: 99999;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.16), 0 0 0 1px rgba(255,255,255,0.6);
+  /* Hidden by default */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+}
+/* Opened by JS adding .is-open */
+.services-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+/* Arrow still rotates via the original parent hover */
+.services-dropdown:hover .services-arrow {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+
+/* Each service link */
+.services-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.7rem 1.2rem;
+  color: #1e293b;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 10px;
+  margin: 3px 6px;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+.services-item:hover {
+  background: rgba(239, 68, 68, 0.07);
+  color: var(--color-accent-red, #ef4444);
+  transform: translateX(4px);
+}
+
+/* Icon bubble */
+.services-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--color-accent-red, #ef4444);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  transition: background 0.18s ease;
+}
+.services-item:hover .services-icon {
+  background: rgba(239, 68, 68, 0.18);
+}
+
+/* On mobile: show inline, not as fixed overlay */
+@media (max-width: 991px) {
+  .services-menu {
+    position: static !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    box-shadow: none;
+    border: none;
+    backdrop-filter: none;
+    background: transparent;
+    padding: 0 0 0.5rem 1rem;
+  }
+  .services-item {
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    margin: 0;
+    border-radius: 0;
+  }
+  .services-icon { display: none; }
+}
+/* ─────────────────────────────────────────────────── */
+
 /* Cotizar Button */
 .btn-cotizar {
   background: linear-gradient(135deg, var(--color-accent-red), #e11d48);
@@ -105,6 +220,30 @@
   color: #ffffff !important;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5);
+}
+
+/* WhatsApp Navbar Button (Icon Only) */
+.btn-nav-wa {
+  background: #25d366;
+  color: #ffffff !important;
+  font-size: 1.25rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
+  transition: all var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.btn-nav-wa:hover {
+  background: #20ba5a;
+  color: #ffffff !important;
+  transform: translateY(-2px) scale(1.08);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.5);
 }
 
 /* Language Selector Pills */
@@ -163,9 +302,9 @@
   }
 }
 
-/* Mobile overflow fix */
-html, body { overflow-x: hidden; }
-.navbar-sir { max-width: 100vw; overflow-x: hidden; }
+/* Mobile overflow fix – ONLY on body, NOT html (html+overflow breaks position:fixed)
+   navbar must NOT have overflow-x:hidden or it clips the dropdown */
+body { overflow-x: hidden; }
 @media (max-width: 991px) {
   .navbar-nav { flex-direction: column; align-items: flex-start; }
   .navbar-nav .nav-item { width: 100%; }
@@ -179,9 +318,14 @@ html, body { overflow-x: hidden; }
 
 /* Estado inicial */
 .navbar-sir.navbar-service {
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }

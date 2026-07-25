@@ -13,13 +13,12 @@
   
   <script type="module" src="/src/styles/main.css"></script>
 </head>
-<body>
+<body class="service-page">
 <!-- STICKY GLASSMORPHISM NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-sir navbar-service" id="mainNavbar">
     <div class="container">
       <a class="brand-logo" href="index.html#hero">
-        <!-- Brand Logo SVG Placeholder -->
-          <img src="assets/Images/SIRLOGO.png" alt="SIR Logo" class="logo-img">
+        <img src="assets/Images/SIRLOGO.png" alt="SIR Logo" class="logo-img">
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sirNavbarContent" aria-controls="sirNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,8 +30,13 @@
           <li class="nav-item">
             <a class="nav-link active" href="index.html#hero">Inicio</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html#servicios">Servicios</a>
+          <li class="nav-item services-dropdown">
+            <a class="nav-link services-toggle" href="index.html#servicios">Servicios <i class="fas fa-chevron-down services-arrow"></i></a>
+            <ul class="services-menu">
+              <li><a class="services-item" href="eotl.html"><span class="services-icon"><i class="fas fa-industry"></i></span><span>Desarrollo e implementación de EOTL</span></a></li>
+              <li><a class="services-item" href="program-services.html"><span class="services-icon"><i class="fas fa-code"></i></span><span>Servicios de programación</span></a></li>
+              <li><a class="services-item" href="mechanical-components.html"><span class="services-icon"><i class="fas fa-cog"></i></span><span>Diseño y fabricación de componentes mecánicos</span></a></li>
+            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="index.html#contacto">Contacto</a>
@@ -40,14 +44,19 @@
         </ul>
 
         <div class="d-flex align-items-center gap-3 lang-switcher-wrapper">
+          <!-- WhatsApp Navbar Direct Link -->
+          <a href="https://wa.me/528441044389" target="_blank" rel="noopener noreferrer" class="btn-nav-wa" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+
           <!-- Language Selector Pills (Visual Toggle) -->
           <div class="lang-switcher" aria-label="Language Selector">
             <button class="lang-btn active" id="langEs">Español</button>
             <button class="lang-btn" id="langEn">English</button>
           </div>
 
-          <!-- Cotizar Proyecto CTA Button -->
-          <a href="index.html#contacto" class="btn btn-cotizar">
+          <!-- Cotizar Proyecto CTA Button (Mailto) -->
+          <a href="mailto:ventas@sirindustriales.com?subject=Solicitud%20de%20Cotizaci%C3%B3n" class="btn btn-cotizar">
             <i class="fas fa-paper-plane me-1"></i> Cotizar proyecto
           </a>
         </div>
@@ -58,15 +67,14 @@
 <main class="service-detail" style="padding: 120px 0 80px 0; min-height: 80vh; display: flex; align-items: center;">
   <div class="container">
     <div class="row align-items-center g-5">
-      <div class="col-lg-6">
-        <h1 class="section-title-lg" style="color: #0f172a; margin-bottom: 1.5rem; font-size: 3rem;">Servicios de programación
-</h1>
-        <p class="section-subtitle-text" style="text-align: left; margin-bottom: 2.5rem; max-width: 100%; font-size: 1.25rem;">SIR ofrece servicios avanzados de programación para automatización industrial en las industrias automotriz y manufacturera, proporcionando soluciones de software llave en mano para PLC, HMI, robots industriales, visión artificial, control de movimiento y sistemas de producción integrados. Nuestros ingenieros desarrollan software de control confiable, escalable y fácil de mantener, que mejora el desempeño de los equipos, eleva la calidad del producto y maximiza la eficiencia de manufactura. Nuestras capacidades incluyen programación PLC, integración de sistemas robóticos, desarrollo HMI y SCADA, implementación de PLC de seguridad y redes industriales (EtherNet/IP, PROFINET, EtherCAT, Modbus TCP).</p>
-        <a href="index.html#contacto" class="btn btn-hero-info">
+      <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+        <h1 class="section-title-lg" style="color: #0f172a; margin-bottom: 1.5rem; font-size: 3rem;" data-aos="fade-down" data-aos-delay="100">Servicios de programación</h1>
+        <p class="section-subtitle-text" style="text-align: left; margin-bottom: 2.5rem; max-width: 100%; font-size: 1.25rem;" data-aos="fade-up" data-aos-delay="200">SIR ofrece servicios avanzados de programación para automatización industrial en las industrias automotriz y manufacturera, proporcionando soluciones de software llave en mano para PLC, HMI, robots industriales, visión artificial, control de movimiento y sistemas de producción integrados. Nuestros ingenieros desarrollan software de control confiable, escalable y fácil de mantener, que mejora el desempeño de los equipos, eleva la calidad del producto y maximiza la eficiencia de manufactura. Nuestras capacidades incluyen programación PLC, integración de sistemas robóticos, desarrollo HMI y SCADA, implementación de PLC de seguridad y redes industriales (EtherNet/IP, PROFINET, EtherCAT, Modbus TCP).</p>
+        <a href="index.html#contacto" class="btn btn-hero-info" data-aos="zoom-in" data-aos-delay="300">
           Contáctanos <i class="fas fa-arrow-right ms-2"></i>
         </a>
       </div>
-      <div class="col-lg-6">
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
         <img src="assets/Images/Servicio2-Servicios de programación-card.png" alt="Servicios de Programación" class="img-fluid" style="border-radius: 20px; box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2); width: 100%; object-fit: cover; max-height: 400px;">
       </div>
     </div>
@@ -77,16 +85,16 @@
 <section class="service-details-extra" style="padding: 80px 0; background-color: #f8fafc;">
   <div class="container">
     <div class="row g-5 align-items-center">
-      <div class="col-lg-6">
-        <h2 class="section-title-lg" style="color: #0f172a; margin-bottom: 1.5rem; font-size: 2.5rem;">Más Detalles</h2>
-        <p class="section-subtitle-text" style="text-align: left; margin-bottom: 1rem; color: #475569;">
+      <div class="col-lg-6" data-aos="fade-right" data-aos-duration="900">
+        <h2 class="section-title-lg" style="color: #0f172a; margin-bottom: 1.5rem; font-size: 2.5rem;" data-aos="fade-right" data-aos-delay="100">Más Detalles</h2>
+        <p class="section-subtitle-text" style="text-align: left; margin-bottom: 1rem; color: #475569;" data-aos="fade-up" data-aos-delay="200">
           También ofrecemos soluciones de servos y control de movimiento, integración de sistemas de visión, conectividad con bases de datos, integración MES y soluciones de Industria 4.0. Acompañamos los proyectos desde el concepto y la arquitectura de software hasta la puesta en marcha, arranque de producción y optimización.
         </p>
-        <p class="section-subtitle-text" style="text-align: left; color: #475569;">
-      Al combinar experiencia en ingeniería con las mejores prácticas de la industria, SIR – Industrial Solutions entrega soluciones de automatización que garantizan una operación confiable, reducen tiempos de inactividad y ayudan a los fabricantes a alcanzar un desempeño de producción de clase mundial, además de brindar soporte técnico a largo plazo.
+        <p class="section-subtitle-text" style="text-align: left; color: #475569;" data-aos="fade-up" data-aos-delay="300">
+          Al combinar experiencia en ingeniería con las mejores prácticas de la industria, SIR – Industrial Solutions entrega soluciones de automatización que garantizan una operación confiable, reducen tiempos de inactividad y ayudan a los fabricantes a alcanzar un desempeño de producción de clase mundial, además de brindar soporte técnico a largo plazo.
         </p>
       </div>
-      <div class="col-lg-6">
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200" data-aos-duration="900">
         <!-- Bootstrap Carousel -->
         <div id="program-services-carousel" class="carousel slide" data-bs-ride="carousel" style="border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
           <div class="carousel-inner">
@@ -118,10 +126,10 @@
 </section>
 
   
-<section class="brands-section">
+<section class="brands-section" data-aos="fade-up" data-aos-duration="900">
   <div class="container-fluid px-0">
-    <h3 class="brands-title">Marcas con las que trabajamos</h3>
-    <div class="brands-marquee-wrapper">
+    <h3 class="brands-title" data-aos="fade-down" data-aos-delay="100">Marcas con las que trabajamos</h3>
+    <div class="brands-marquee-wrapper" data-aos="fade-up" data-aos-delay="200">
       <div class="brands-marquee">
         <!-- Content is duplicated to make the infinite loop seamless -->
         <div class="brands-marquee-content">
@@ -186,7 +194,7 @@
           </div>
           <div class="footer-contact-item">
             <i class="fas fa-envelope"></i>
-            <span>contacto@empresa.com</span>
+            <span>ventas@sirindustriales.com</span>
           </div>
         </div>
       </div>
@@ -196,7 +204,7 @@
         <a href="https://wa.me/528441044389" target="_blank" rel="noopener noreferrer" class="social-circle-btn wa" aria-label="WhatsApp">
           <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="mailto:contacto@empresa.com" class="social-circle-btn" aria-label="Correo Electrónico">
+        <a href="mailto:ventas@sirindustriales.com" class="social-circle-btn" aria-label="Correo Electrónico">
           <i class="fas fa-envelope"></i>
         </a>
         <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" class="social-circle-btn fb" aria-label="Facebook">

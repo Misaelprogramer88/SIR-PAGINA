@@ -4,6 +4,9 @@
   color: #94a3b8;
   padding: 4.5rem 0 2rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 0;
+  position: relative;
+  z-index: 10;
 }
 
 .footer-brand-text {

@@ -54,7 +54,7 @@
   <!-- STICKY GLASSMORPHISM NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-sir" id="mainNavbar">
     <div class="container">
-      <a class="brand-logo" href="#hero">
+      <a class="brand-logo" href="index.html#hero">
         <img src="assets/Images/SIRLOGO.png" alt="SIR Logo" class="logo-img">
       </a>
 
@@ -65,25 +65,35 @@
       <div class="collapse navbar-collapse" id="sirNavbarContent">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" href="#hero">Inicio</a>
+            <a class="nav-link active" href="index.html#hero">Inicio</a>
+          </li>
+          <li class="nav-item services-dropdown">
+            <a class="nav-link services-toggle" href="index.html#servicios">Servicios <i class="fas fa-chevron-down services-arrow"></i></a>
+            <ul class="services-menu">
+              <li><a class="services-item" href="eotl.html"><span class="services-icon"><i class="fas fa-industry"></i></span><span>Desarrollo e implementación de EOTL</span></a></li>
+              <li><a class="services-item" href="program-services.html"><span class="services-icon"><i class="fas fa-code"></i></span><span>Servicios de programación</span></a></li>
+              <li><a class="services-item" href="mechanical-components.html"><span class="services-icon"><i class="fas fa-cog"></i></span><span>Diseño y fabricación de componentes mecánicos</span></a></li>
+            </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#servicios">Servicios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contacto">Contacto</a>
+            <a class="nav-link" href="index.html#contacto">Contacto</a>
           </li>
         </ul>
 
         <div class="d-flex align-items-center gap-3 lang-switcher-wrapper">
+          <!-- WhatsApp Navbar Direct Link -->
+          <a href="https://wa.me/528441044389" target="_blank" rel="noopener noreferrer" class="btn-nav-wa" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+
           <!-- Language Selector Pills (Visual Toggle) -->
           <div class="lang-switcher" aria-label="Language Selector">
             <button class="lang-btn active" id="langEs">Español</button>
             <button class="lang-btn" id="langEn">English</button>
           </div>
 
-          <!-- Cotizar Proyecto CTA Button -->
-          <a href="#contacto" class="btn btn-cotizar">
+          <!-- Cotizar Proyecto CTA Button (Mailto) -->
+          <a href="mailto:ventas@sirindustriales.com?subject=Solicitud%20de%20Cotizaci%C3%B3n" class="btn btn-cotizar">
             <i class="fas fa-paper-plane me-1"></i> Cotizar proyecto
           </a>
         </div>
@@ -254,7 +264,7 @@
                   </div>
                   <div>
                     <div class="info-label">Correo electrónico</div>
-                    <p class="info-value">contacto@empresa.com</p>
+                    <p class="info-value">ventas@sirindustriales.com</p>
                   </div>
                 </div>
               </div>
@@ -315,8 +325,9 @@
       <button type="submit" class="btn btn-form-submit" id="btnSubmitForm">
         <i class="fas fa-paper-plane me-1"></i> <span id="btnSubmitText">SUBMIT</span>
       </button>
-        </div>
-      </div>
+    </form>
+  </div>
+</div>
 
       <!-- Cobertura Nacional (Abajo del Formulario sin tarjeta) -->
       <div class="row mt-5 justify-content-center text-center" data-aos="fade-up" data-aos-delay="300">
@@ -381,7 +392,7 @@
           </div>
           <div class="footer-contact-item">
             <i class="fas fa-envelope"></i>
-            <span>contacto@empresa.com</span>
+            <span>ventas@sirindustriales.com</span>
           </div>
         </div>
       </div>
@@ -391,7 +402,7 @@
         <a href="https://wa.me/528441044389" target="_blank" rel="noopener noreferrer" class="social-circle-btn wa" aria-label="WhatsApp">
           <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="mailto:contacto@empresa.com" class="social-circle-btn" aria-label="Correo Electrónico">
+        <a href="mailto:ventas@sirindustriales.com" class="social-circle-btn" aria-label="Correo Electrónico">
           <i class="fas fa-envelope"></i>
         </a>
         

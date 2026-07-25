@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const langEn = document.getElementById('langEn');
 
   if (langEs && langEn) {
-    let currentFile = window.location.pathname.split('/').pop() || 'index.html';
-    if (!currentFile || currentFile === '/') currentFile = 'index.html';
+    let currentFile = window.location.pathname.split('/').pop();
+    if (!currentFile || currentFile === '' || currentFile === '/') currentFile = 'index.html';
 
     const isEnPage = currentFile.includes('-en.html');
 
@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     langEs.addEventListener('click', (e) => {
       e.preventDefault();
+      e.stopPropagation();
       if (isEnPage) {
         const spanishFile = currentFile.replace('-en.html', '.html');
         window.location.href = spanishFile;
@@ -80,8 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     langEn.addEventListener('click', (e) => {
       e.preventDefault();
+      e.stopPropagation();
       if (!isEnPage) {
-        const englishFile = currentFile === 'index.html' ? 'index-en.html' : currentFile.replace('.html', '-en.html');
+        const englishFile = (currentFile === 'index.html') ? 'index-en.html' : currentFile.replace('.html', '-en.html');
         window.location.href = englishFile;
       }
     });
@@ -133,31 +135,46 @@ document.addEventListener('DOMContentLoaded', () => {
       let   left  = rect.left + rect.width / 2 - menuW / 2;
       // Clamp to viewport
       left = Math.max(8, Math.min(left, window.innerWidth - menuW - 8));
-      svcMenu.style.top  = (rect.bottom + window.scrollY + 4) + 'px';
+      svcMenu.style.position = 'fixed';
+      svcMenu.style.top  = (rect.bottom + 4) + 'px';
       svcMenu.style.left = left + 'px';
     }
 
-    // Show on hover (CSS handles opacity/transform; JS only positions)
-    svcDropdown.addEventListener('mouseenter', () => {
+    // Position immediately on page init
+    positionMenu();
+
+    let hideTimeout = null;
+
+    function openMenu() {
+      if (hideTimeout) {
+        clearTimeout(hideTimeout);
+        hideTimeout = null;
+      }
       positionMenu();
       svcMenu.classList.add('is-open');
-    });
-    svcDropdown.addEventListener('mouseleave', () => {
-      svcMenu.classList.remove('is-open');
-    });
-    svcMenu.addEventListener('mouseenter', () => {
-      svcMenu.classList.add('is-open');
-    });
-    svcMenu.addEventListener('mouseleave', () => {
-      svcMenu.classList.remove('is-open');
-    });
+      svcDropdown.classList.add('is-open');
+    }
+
+    function closeMenuWithDelay() {
+      if (hideTimeout) clearTimeout(hideTimeout);
+      hideTimeout = setTimeout(() => {
+        svcMenu.classList.remove('is-open');
+        svcDropdown.classList.remove('is-open');
+      }, 350);
+    }
+
+    // Show on hover with small delay on hide so users never battle to click a service
+    svcDropdown.addEventListener('mouseenter', openMenu);
+    svcDropdown.addEventListener('mouseleave', closeMenuWithDelay);
+    svcMenu.addEventListener('mouseenter', openMenu);
+    svcMenu.addEventListener('mouseleave', closeMenuWithDelay);
 
     window.addEventListener('resize', () => {
-      if (svcMenu.classList.contains('is-open')) positionMenu();
+      positionMenu();
     });
     // Reposition on scroll so it follows the (fixed) navbar
     window.addEventListener('scroll', () => {
-      if (svcMenu.classList.contains('is-open')) positionMenu();
+      positionMenu();
     }, { passive: true });
   }
   // ────────────────────────────────────────────────────────────────────

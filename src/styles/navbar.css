@@ -108,7 +108,7 @@
   list-style: none;
   margin: 0;
   padding: 0.5rem 0;
-  position: absolute;   /* absolute to document; coords set by JS */
+  position: fixed;   /* fixed so it never affects body height or document flow */
   min-width: 300px;
   z-index: 99999;
   background: rgba(255, 255, 255, 0.97);
@@ -131,8 +131,20 @@
   pointer-events: auto;
   transform: translateY(0);
 }
+/* Invisible bridge to keep hover active between nav-link and dropdown */
+.services-menu::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  background: transparent;
+}
+
 /* Arrow still rotates via the original parent hover */
-.services-dropdown:hover .services-arrow {
+.services-dropdown:hover .services-arrow,
+.services-dropdown.is-open .services-arrow {
   transform: rotate(180deg);
   opacity: 1;
 }

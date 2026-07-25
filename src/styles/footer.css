@@ -1,10 +1,10 @@
 /* Footer Styling */
 .footer-sir {
-  background: #0b172a;
+  background: #0b172a !important;
   color: #94a3b8;
-  padding: 4.5rem 0 2rem 0;
+  padding: 4.5rem 0 1.5rem 0 !important;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
   position: relative;
   z-index: 10;
 }
@@ -123,9 +123,16 @@
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 1.5rem;
   margin-top: 1rem;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
   text-align: center;
   font-size: 0.875rem;
   color: #64748b;
+}
+
+.footer-bottom-divider p {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .footer-bottom-divider strong {

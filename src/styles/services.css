@@ -36,7 +36,7 @@
 }
 
 .section-title-lg {
-  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  font-size: clamp(1.8rem, 5vw, 3.8rem);
   font-weight: 900;
   letter-spacing: 2px;
   color: #ffffff;
@@ -44,6 +44,39 @@
   margin-bottom: 0.75rem;
   position: relative;
   display: inline-block;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Responsive typography & word-wrapping fixes for mobile screens */
+h1, h2, h3, h4, h5, h6,
+.section-title-lg,
+.service-card-title,
+.hero-title,
+.hero-subtitle,
+.cobertura-card-title {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Service Detail H1 Override for perfect mobile fit */
+.service-detail h1.section-title-lg,
+h1.section-title-lg {
+  font-size: clamp(1.5rem, 6.5vw, 3rem) !important;
+  line-height: 1.25 !important;
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+}
+
+@media (max-width: 576px) {
+  .section-title-lg {
+    font-size: clamp(1.45rem, 6vw, 2.2rem) !important;
+    letter-spacing: 1px !important;
+  }
+  
+  .service-card-title {
+    font-size: 1.2rem !important;
+  }
 }
 
 .section-title-lg::after {

@@ -52,15 +52,40 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { passive: true });
   handleScroll();
 
-  // ── Language Switcher Visual Toggle ──
-  const langBtns = document.querySelectorAll('.lang-btn');
-  langBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
+  // ── Language Switcher Navigation ──
+  const langEs = document.getElementById('langEs');
+  const langEn = document.getElementById('langEn');
+
+  if (langEs && langEn) {
+    let currentFile = window.location.pathname.split('/').pop() || 'index.html';
+    if (!currentFile || currentFile === '/') currentFile = 'index.html';
+
+    const isEnPage = currentFile.includes('-en.html');
+
+    if (isEnPage) {
+      langEn.classList.add('active');
+      langEs.classList.remove('active');
+    } else {
+      langEs.classList.add('active');
+      langEn.classList.remove('active');
+    }
+
+    langEs.addEventListener('click', (e) => {
       e.preventDefault();
-      langBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      if (isEnPage) {
+        const spanishFile = currentFile.replace('-en.html', '.html');
+        window.location.href = spanishFile;
+      }
     });
-  });
+
+    langEn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (!isEnPage) {
+        const englishFile = currentFile === 'index.html' ? 'index-en.html' : currentFile.replace('.html', '-en.html');
+        window.location.href = englishFile;
+      }
+    });
+  }
 
   // ── Smooth scroll for nav links & close mobile menu on click ──
   const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .btn-hero-info, .services-item, .btn-card-action');
@@ -72,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!href) return;
 
       const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-      const isIndexPage = currentPage === '' || currentPage === 'index.html';
+      const isIndexPage = currentPage === '' || currentPage === 'index.html' || currentPage === 'index-en.html';
 
       // Internal section links (e.g. index.html#servicios, index.html#contacto, #contacto)
       if (href.includes('#') && !href.startsWith('mailto:') && !href.startsWith('https://wa.me')) {

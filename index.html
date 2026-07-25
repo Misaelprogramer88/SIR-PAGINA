@@ -58,9 +58,15 @@
         <img src="assets/Images/SIRLOGO.png" alt="SIR Logo" class="logo-img">
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sirNavbarContent" aria-controls="sirNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
+      <!-- Mobile Actions: WhatsApp Icon + Hamburger Toggle -->
+      <div class="mobile-nav-actions d-flex align-items-center gap-2 d-lg-none">
+        <a href="https://wa.me/528441044389" target="_blank" rel="noopener noreferrer" class="btn-nav-wa" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sirNavbarContent" aria-controls="sirNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
 
       <div class="collapse navbar-collapse" id="sirNavbarContent">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
@@ -68,7 +74,7 @@
             <a class="nav-link active" href="index.html#hero">Inicio</a>
           </li>
           <li class="nav-item services-dropdown">
-            <a class="nav-link services-toggle" href="index.html#servicios">Servicios <i class="fas fa-chevron-down services-arrow"></i></a>
+            <a class="nav-link services-toggle" href="index.html#servicios">Servicios <i class="fas fa-chevron-down services-arrow d-none d-lg-inline-block"></i></a>
             <ul class="services-menu">
               <li><a class="services-item" href="eotl.html"><span class="services-icon"><i class="fas fa-industry"></i></span><span>Desarrollo e implementación de EOTL</span></a></li>
               <li><a class="services-item" href="program-services.html"><span class="services-icon"><i class="fas fa-code"></i></span><span>Servicios de programación</span></a></li>
@@ -81,8 +87,8 @@
         </ul>
 
         <div class="d-flex align-items-center gap-3 lang-switcher-wrapper">
-          <!-- WhatsApp Navbar Direct Link -->
-          <a href="https://wa.me/528441044389" target="_blank" rel="noopener noreferrer" class="btn-nav-wa" aria-label="WhatsApp">
+          <!-- WhatsApp Navbar Direct Link (Desktop only) -->
+          <a href="https://wa.me/528441044389" target="_blank" rel="noopener noreferrer" class="btn-nav-wa d-none d-lg-inline-flex" aria-label="WhatsApp">
             <i class="fab fa-whatsapp"></i>
           </a>
 

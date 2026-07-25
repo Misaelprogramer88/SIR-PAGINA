@@ -85,11 +85,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ── Services hover dropdown ──────────────────────────────────────────
-  // Teleport the menu to <body> so NO parent overflow can clip it
+  // Teleport the menu to <body> ONLY on desktop (>= 992px) so NO parent overflow clips it,
+  // while keeping it inside the collapse menu on mobile devices
   const svcDropdown = document.querySelector('.services-dropdown');
   const svcMenu     = document.querySelector('.services-menu');
 
-  if (svcDropdown && svcMenu) {
+  if (svcDropdown && svcMenu && window.innerWidth >= 992) {
     // Move menu out of the navbar into body
     document.body.appendChild(svcMenu);
 

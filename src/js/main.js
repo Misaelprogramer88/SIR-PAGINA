@@ -21,9 +21,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const handleScroll = () => {
     const scrollY = window.scrollY;
 
-    // Parallax
+    // Parallax for Hero Video
     if (heroVideo) {
       heroVideo.style.transform = `translateY(${scrollY * PARALLAX_SPEED}px)`;
+    }
+
+    // Parallax for Service Details Extra Section Waves
+    const serviceExtraWaves = document.querySelectorAll('.service-details-extra .services-bg-waves');
+    if (serviceExtraWaves.length > 0) {
+      const viewHeight = window.innerHeight;
+      serviceExtraWaves.forEach(waves => {
+        const section = waves.closest('.service-details-extra');
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top < viewHeight && rect.bottom > 0) {
+            const shift = (viewHeight - rect.top) * 0.18;
+            waves.style.transform = `translateY(${shift}px)`;
+          }
+        }
+      });
     }
 
     // Navbar state

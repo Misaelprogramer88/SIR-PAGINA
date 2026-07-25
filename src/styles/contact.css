@@ -72,34 +72,40 @@
   margin: 0;
 }
 
-/* Illustration Placeholder */
+/* Contact Logo Wrapper (Transparent, no box/background) */
 .illustration-placeholder {
   width: 100%;
-  height: 140px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1rem 0;
-  border: 1px dashed #93c5fd;
+  margin: 1.5rem 0;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  height: auto !important;
 }
 
-.illustration-placeholder svg {
-  width: 70px;
-  height: 70px;
-  color: #3b82f6;
-  opacity: 0.85;
+.illustration-placeholder .contact-logo-img {
+  max-height: 160px;
+  max-width: 95%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.08));
+  transition: transform var(--transition-normal, 0.3s ease);
+}
+
+.illustration-placeholder:hover .contact-logo-img {
+  transform: scale(1.03);
 }
 
 .contact-headline {
-  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.25;
   background: linear-gradient(135deg, #0d9488 0%, #2563eb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
 }
 
 /* Contact Form */
